@@ -1,0 +1,3 @@
+name: FluxBBridge
+main: net.skyirc.fluxbbridge.FluxBBridge
+version: Alpha-0.1
