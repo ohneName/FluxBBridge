@@ -4,8 +4,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin; 
 /**
- * Hello world!
  *
+ * @author Florian Reichmuth
  */
 public class FluxBBridge extends JavaPlugin 
 {
