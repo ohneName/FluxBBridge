@@ -1,3 +1,7 @@
 name: FluxBBridge
 main: net.skyirc.fluxbbridge.FluxBBridge
 version: Alpha-0.1
+commands:
+  forum:
+    description: bla
+    usage: "Usage: blub"

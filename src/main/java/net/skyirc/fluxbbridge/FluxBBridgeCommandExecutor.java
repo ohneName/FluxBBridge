@@ -21,8 +21,8 @@ private FluxBBridge plugin;
     			sender.sendMessage("This command can only be run by a player.");
     		} else {
     			Player player = (Player) sender;
-                        if (args.length > 2) {
-                            
+                        if (args.length > 1) {
+                            Tools.check(sender.getName(), args[0], args[1], plugin);
                         }
                 }
     		return true;

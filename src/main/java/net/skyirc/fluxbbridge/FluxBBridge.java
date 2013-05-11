@@ -12,7 +12,7 @@ public class FluxBBridge extends JavaPlugin
     @Override
     public void onEnable(){
         getLogger().info("FluxBBridge has been enabled");
-        getCommand("basic").setExecutor(new FluxBBridgeCommandExecutor(this));
+        getCommand("forum").setExecutor(new FluxBBridgeCommandExecutor(this));
         this.saveDefaultConfig();
     }
  

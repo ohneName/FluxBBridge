@@ -3,6 +3,8 @@ package net.skyirc.fluxbbridge;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,18 +14,14 @@ import org.json.simple.parser.JSONParser;
  * @author Florian Reichmuth
  */
 public class Tools {
-    public static void main(String[] args){
-        check(null, null, null, null);
-    }
-    
-public static boolean check( String login, String user, String pw , FluxBBridge plugin)
+public static boolean check( String user, String login, String pw , FluxBBridge plugin)
   {
       	JSONParser parser = new JSONParser();
     InputStream is = null;
  //List list = new ArrayList();
     try
     {
-      URL url = new URL( "http://ufen.skyirc.net/forum/fluxbbridge.php?mcUser=" + user + "&boardUser=" + login + "&password=" + pw + "&key=" + plugin.getConfig().getString("key") );
+      URL url = new URL( plugin.getConfig().getString("url") + "?mcUser=" + user + "&boardUser=" + login + "&password=" + sha1(pw) + "&key=" + plugin.getConfig().getString("key") );
       is = url.openStream();
       
       //System.out.println( new Scanner( is ).useDelimiter( "\\Z" ).next() );
@@ -42,4 +40,14 @@ public static boolean check( String login, String user, String pw , FluxBBridge 
       }
     }
   }
+    static String sha1(String input) throws NoSuchAlgorithmException {
+        MessageDigest mDigest = MessageDigest.getInstance("SHA1");
+        byte[] result = mDigest.digest(input.getBytes());
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < result.length; i++) {
+            sb.append(Integer.toString((result[i] & 0xff) + 0x100, 16).substring(1));
+        }
+         
+        return sb.toString();
+    }
 }
