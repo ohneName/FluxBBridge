@@ -1,7 +1,7 @@
 name: FluxBBridge
-main: net.skyirc.fluxbbridge.FluxBBridge
-version: Alpha-0.1
+main: de.ohnename.fluxbbridge.FluxBBridge
+version: 1.0
 commands:
   forum:
-    description: bla
-    usage: "Usage: blub"
+    description: Assign a minecraft account to a board account.
+    usage: /<command> boardAccount [token]

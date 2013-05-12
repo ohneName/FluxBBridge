@@ -1,4 +1,4 @@
-package net.skyirc.fluxbbridge;
+package de.ohnename.fluxbbridge;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
