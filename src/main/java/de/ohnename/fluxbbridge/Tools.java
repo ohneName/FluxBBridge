@@ -43,9 +43,6 @@ public class Tools {
 				else if(jsonObject.get("message").toString().equalsIgnoreCase("mcUser in use")) {
 					throw new MinecraftAccountTakenException();
 				}
-				else {
-					return false;
-				}
 
 			}
 
@@ -54,6 +51,8 @@ public class Tools {
 		} catch (Exception e) {
 			return false;
 		}
+
+		return false;
 
 	}
 

@@ -53,7 +53,7 @@ public class FluxBBridgeCommandExecutor implements CommandExecutor {
 				}
 				else if(args.length >= 2) {
 
-					boolean check = false;
+					boolean check;
 
 					try {
 						check = Tools.check(player.getName(), args[0], args[1], plugin);
@@ -68,6 +68,7 @@ public class FluxBBridgeCommandExecutor implements CommandExecutor {
 					}
 					catch (Tools.MinecraftAccountTakenException e) {
 						player.sendMessage(ChatColor.RED + "Dein Minecraftaccount ist bereits einem anderen Forenaccount zugeordnet.");
+						return true;
 					}
 
 					if(!check) {
